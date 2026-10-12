@@ -3150,3 +3150,41 @@ pub struct PwmClaimRequest {
     pub to_account_type: Option<String>,
     pub order_link_id: String,
 }
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ListEarnAutoSavingsResponse {
+    #[serde(default)]
+    pub ret_code: Option<i64>,
+    #[serde(default)]
+    pub ret_msg: Option<String>,
+    #[serde(default)]
+    pub ret_ext_info: Option<serde_json::Value>,
+    #[serde(default)]
+    pub time: Option<i64>,
+    #[serde(default)]
+    pub result: Option<serde_json::Value>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct EditEarnAutoSavingsParams {
+    #[serde(default)]
+    pub coin: Option<String>,
+    pub is_selected: bool,
+    #[serde(default)]
+    pub purchase_immediately: Option<bool>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct EditEarnAutoSavingsResponse {
+    #[serde(default)]
+    pub ret_code: Option<i64>,
+    #[serde(default)]
+    pub ret_msg: Option<String>,
+    #[serde(default)]
+    pub ret_ext_info: Option<serde_json::Value>,
+    #[serde(default)]
+    pub time: Option<i64>,
+}

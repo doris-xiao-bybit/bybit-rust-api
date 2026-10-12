@@ -2,6 +2,7 @@
 
 use crate::client::BybitClient;
 use crate::error::Result;
+use crate::models::market::*;
 use crate::models::*;
 
 impl BybitClient {
@@ -450,5 +451,21 @@ impl BybitClient {
             params.push(("category", s.as_str()));
         }
         self.get_public("/v5/market/rpi_orderbook", &params).await
+    }
+}
+
+impl BybitClient {
+    pub async fn get_option_base_coins(
+        &self,
+        underlying_type: Option<i64>,
+    ) -> Result<GetOptionBaseCoinsResponse> {
+        let mut params = vec![];
+        let underlying_type_string;
+        if let Some(value) = underlying_type {
+            underlying_type_string = value.to_string();
+            params.push(("underlyingType", underlying_type_string.as_str()));
+        }
+        self.get_public("/v5/market/option-base-coins", &params)
+            .await
     }
 }

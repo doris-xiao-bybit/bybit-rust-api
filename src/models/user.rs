@@ -403,3 +403,33 @@ pub struct ApiKeyPermissions {
     #[serde(rename = "Affiliate", skip_serializing_if = "Option::is_none")]
     pub affiliate: Option<Vec<String>>,
 }
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct QueryReferralCodeResponse {
+    #[serde(default)]
+    pub ret_code: Option<i64>,
+    #[serde(default)]
+    pub ret_msg: Option<String>,
+    #[serde(default)]
+    pub result: Option<QueryReferralCodeResult>,
+    #[serde(default)]
+    pub ret_ext_info: Option<serde_json::Value>,
+    #[serde(default)]
+    pub time: Option<i64>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct QueryReferralCodeResult {
+    #[serde(default)]
+    pub referral_codes: Option<Vec<ReferralCodeItem>>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ReferralCodeItem {
+    pub referral_code: String,
+    pub referral_link: String,
+    pub scene: i64,
+}

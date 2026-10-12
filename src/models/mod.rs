@@ -1,5 +1,4 @@
 //! Data models for Bybit API requests and responses.
-
 pub mod account;
 pub mod asset;
 pub mod broker;
@@ -14,7 +13,6 @@ pub mod rfq;
 pub mod spot_margin;
 pub mod trade;
 pub mod user;
-
 pub use account::*;
 pub use asset::*;
 pub use broker::*;

@@ -47,7 +47,6 @@ impl From<&str> for RedactedString {
     }
 }
 
-
 /// Product category.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "lowercase")]

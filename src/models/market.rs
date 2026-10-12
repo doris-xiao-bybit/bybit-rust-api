@@ -1101,3 +1101,44 @@ pub struct ServerTimeResult {
 }
 
 pub type ServerTimeResponse = ServerTimeResult;
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GetOptionBaseCoinsResponse {
+    #[serde(default)]
+    pub ret_code: Option<i64>,
+    #[serde(default)]
+    pub ret_msg: Option<String>,
+    #[serde(default)]
+    pub ret_ext_info: Option<serde_json::Value>,
+    #[serde(default)]
+    pub time: Option<i64>,
+    #[serde(default)]
+    pub result: Option<OptionBaseCoinsResult>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct OptionBaseCoinsResult {
+    #[serde(default)]
+    pub list: Option<Vec<OptionBaseCoin>>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct OptionBaseCoin {
+    #[serde(default)]
+    pub base_coin: Option<String>,
+    #[serde(default)]
+    pub quote_coin: Option<String>,
+    #[serde(default)]
+    pub settle_coin: Option<String>,
+    #[serde(default)]
+    pub option_show_name: Option<String>,
+    #[serde(default)]
+    pub option_online_time: Option<i64>,
+    #[serde(default)]
+    pub has_symbol: Option<i64>,
+    #[serde(default)]
+    pub underlying_type: Option<i64>,
+}
