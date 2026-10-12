@@ -125,110 +125,13 @@ pub struct SpotMarginSwitchModeResponse {
     pub spot_margin_mode: Option<String>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetSpotMarginTradeCoinStateResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetSpotMarginTradeFlexibleAvailableInventoryResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetSpotMarginTradeAutoRepayModeResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetSpotMarginTradeMaxBorrowableResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetSpotMarginTradeRepaymentAvailableAmountResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetSpotMarginTradeStateResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QueryFixedAvailableInventoryResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<FixedAvailableInventoryResult>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type GetSpotMarginTradeCoinStateResponse = serde_json::Value;
+pub type GetSpotMarginTradeFlexibleAvailableInventoryResponse = serde_json::Value;
+pub type GetSpotMarginTradeAutoRepayModeResponse = serde_json::Value;
+pub type GetSpotMarginTradeMaxBorrowableResponse = serde_json::Value;
+pub type GetSpotMarginTradeRepaymentAvailableAmountResponse = serde_json::Value;
+pub type GetSpotMarginTradeStateResponse = serde_json::Value;
+pub type QueryFixedAvailableInventoryResponse = FixedAvailableInventoryResult;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -245,50 +148,9 @@ pub struct FixedAvailableInventoryResult {
     pub update_time: Option<String>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QueryFixedBorrowContractsResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QueryFixedBorrowOrdersResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QueryFixedBorrowMarketResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type QueryFixedBorrowContractsResponse = serde_json::Value;
+pub type QueryFixedBorrowOrdersResponse = serde_json::Value;
+pub type QueryFixedBorrowMarketResponse = serde_json::Value;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -298,20 +160,7 @@ pub struct RenewFixedBorrowParams {
     pub qty: Option<String>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct RenewFixedBorrowResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type RenewFixedBorrowResponse = serde_json::Value;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -326,35 +175,8 @@ pub struct AccountFixedBorrowParams {
     pub strategy_type: Option<String>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AccountFixedBorrowResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QueryBorrowLiabilityResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type AccountFixedBorrowResponse = serde_json::Value;
+pub type QueryBorrowLiabilityResponse = serde_json::Value;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -364,17 +186,4 @@ pub struct SetAutoRepayModeParams {
     pub auto_repay_mode: String,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct SetAutoRepayModeResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type SetAutoRepayModeResponse = serde_json::Value;

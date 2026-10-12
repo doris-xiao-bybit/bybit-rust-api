@@ -129,6 +129,154 @@ mod query_tests {
     }
 }
 
+#[cfg(test)]
+mod response_shape_tests {
+    use super::ApiResponse;
+    use crate::models::{
+        AmendSpreadOrderParams, CancelAllSpreadOrdersParams, CancelSpreadOrderParams,
+        CreateSpreadOrderParams, GetOptionBaseCoinsResponse, GetPreUpgradeOrderHistoryResponse,
+        GetSpreadOrderbookResponse, InsLoanProductInfosResponse, OrderType,
+        QueryReferralCodeResponse, Side, TimeInForce,
+    };
+
+    #[test]
+    fn option_base_coins_deserializes_the_unwrapped_result() {
+        let raw = r#"{
+            "retCode": 0,
+            "retMsg": "success",
+            "result": {
+                "list": [{
+                    "baseCoin": "BTC",
+                    "quoteCoin": "USDT",
+                    "settleCoin": "USDT",
+                    "optionShowName": "BTC-Options",
+                    "optionOnlineTime": 1736323200000,
+                    "hasSymbol": 1,
+                    "underlyingType": 0
+                }]
+            },
+            "retExtInfo": {},
+            "time": 1736323200000
+        }"#;
+
+        let response: ApiResponse<GetOptionBaseCoinsResponse> =
+            serde_json::from_str(raw).expect("response should deserialize");
+
+        let result = serde_json::to_value(response.result).expect("result should serialize");
+        assert_eq!(
+            result.pointer("/list/0/baseCoin").and_then(|v| v.as_str()),
+            Some("BTC")
+        );
+    }
+
+    #[test]
+    fn referral_codes_deserialize_the_unwrapped_result() {
+        let raw = r#"{
+            "retCode": 0,
+            "retMsg": "success",
+            "result": {
+                "referralCodes": [{
+                    "referralCode": "code",
+                    "referralLink": "https://example.test/code",
+                    "scene": 1
+                }]
+            },
+            "retExtInfo": {},
+            "time": 1736323200000
+        }"#;
+
+        let response: ApiResponse<QueryReferralCodeResponse> =
+            serde_json::from_str(raw).expect("response should deserialize");
+
+        let result = serde_json::to_value(response.result).expect("result should serialize");
+        assert_eq!(
+            result
+                .pointer("/referralCodes/0/referralCode")
+                .and_then(|v| v.as_str()),
+            Some("code")
+        );
+    }
+
+    #[test]
+    fn generated_service_modules_are_exported_and_spread_levels_deserialize() {
+        let _: InsLoanProductInfosResponse = serde_json::json!({"list": []});
+        let _: GetPreUpgradeOrderHistoryResponse = serde_json::json!({"list": []});
+
+        let result: GetSpreadOrderbookResponse = serde_json::from_value(serde_json::json!({
+            "s": "SOLUSDT_SOL/USDT",
+            "b": [["21.0000", "0.1"]],
+            "a": [["23.0107", "4.6"]],
+            "ts": 1744077242177_i64,
+            "u": 46977,
+            "seq": 213110,
+            "cts": 1744076329043_i64
+        }))
+        .expect("spread orderbook result should deserialize");
+
+        assert_eq!(result.b.as_ref().map(Vec::len), Some(1));
+        assert_eq!(result.b.as_ref().unwrap()[0][0], "21.0000");
+    }
+
+    #[test]
+    fn spread_order_requests_serialize_required_parameters() {
+        let create = CreateSpreadOrderParams {
+            symbol: "SOLUSDT_SOL/USDT".into(),
+            side: Side::Buy,
+            order_type: OrderType::Limit,
+            qty: "0.1".into(),
+            price: Some("21.0".into()),
+            order_link_id: Some("spread-1".into()),
+            time_in_force: Some(TimeInForce::GTC),
+        };
+        assert_eq!(
+            serde_json::to_value(create).unwrap(),
+            serde_json::json!({
+                "symbol": "SOLUSDT_SOL/USDT",
+                "side": "Buy",
+                "orderType": "Limit",
+                "qty": "0.1",
+                "price": "21.0",
+                "orderLinkId": "spread-1",
+                "timeInForce": "GTC"
+            })
+        );
+
+        let amend = AmendSpreadOrderParams {
+            symbol: "SOLUSDT_SOL/USDT".into(),
+            order_id: Some("order-1".into()),
+            order_link_id: None,
+            qty: None,
+            price: Some("22.0".into()),
+        };
+        assert_eq!(
+            serde_json::to_value(amend).unwrap(),
+            serde_json::json!({
+                "symbol": "SOLUSDT_SOL/USDT",
+                "orderId": "order-1",
+                "price": "22.0"
+            })
+        );
+
+        let cancel = CancelSpreadOrderParams {
+            order_id: Some("order-1".into()),
+            order_link_id: None,
+        };
+        assert_eq!(
+            serde_json::to_value(cancel).unwrap(),
+            serde_json::json!({"orderId": "order-1"})
+        );
+
+        let cancel_all = CancelAllSpreadOrdersParams {
+            symbol: None,
+            cancel_all: Some(true),
+        };
+        assert_eq!(
+            serde_json::to_value(cancel_all).unwrap(),
+            serde_json::json!({"cancelAll": true})
+        );
+    }
+}
+
 /// API response wrapper from Bybit.
 #[derive(Debug, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]

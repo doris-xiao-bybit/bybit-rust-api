@@ -1102,20 +1102,7 @@ pub struct ServerTimeResult {
 
 pub type ServerTimeResponse = ServerTimeResult;
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetOptionBaseCoinsResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-    #[serde(default)]
-    pub result: Option<OptionBaseCoinsResult>,
-}
+pub type GetOptionBaseCoinsResponse = OptionBaseCoinsResult;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]

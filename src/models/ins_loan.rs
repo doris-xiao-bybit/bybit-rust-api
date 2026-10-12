@@ -7,50 +7,9 @@ pub struct InsLoanAssociationUidParams {
     pub operate: String,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct InsLoanAssociationUidResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct InsLoanCoinDeltaAmountResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct InsLoanDelayLiqStatusResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<DelayLiqStatusResult>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type InsLoanAssociationUidResponse = serde_json::Value;
+pub type InsLoanCoinDeltaAmountResponse = serde_json::Value;
+pub type InsLoanDelayLiqStatusResponse = DelayLiqStatusResult;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -65,95 +24,12 @@ pub struct DelayLiqStatusResult {
     pub delay_liq_remaining_sec: Option<String>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct InsLoanEnsureTokensConvertResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct InsLoanEnsureTokensResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct InsLoanGetLoanOrderResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct InsLoanLtvConvertResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct InsLoanProductInfosResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct InsLoanRepaidHistoryResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type InsLoanEnsureTokensConvertResponse = serde_json::Value;
+pub type InsLoanEnsureTokensResponse = serde_json::Value;
+pub type InsLoanGetLoanOrderResponse = serde_json::Value;
+pub type InsLoanLtvConvertResponse = serde_json::Value;
+pub type InsLoanProductInfosResponse = serde_json::Value;
+pub type InsLoanRepaidHistoryResponse = serde_json::Value;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -162,17 +38,4 @@ pub struct InsLoanRepayLoanParams {
     pub quantity: String,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct InsLoanRepayLoanResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type InsLoanRepayLoanResponse = serde_json::Value;

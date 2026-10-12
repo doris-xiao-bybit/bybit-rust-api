@@ -387,140 +387,15 @@ pub struct SetDefaultDepositToAccountParams {
     pub account_type: AccountType,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct SetDefaultDepositToAccountResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QueryInternalDepositRecordsResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QuerySubMemberDepositAddressResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QuerySubMemberDepositRecordsResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AccountCoinBalanceQueryResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AssetInfoQueryResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct SubMemberListQueryResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct TransferCoinListQueryResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct UniversalTransferListQueryResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type SetDefaultDepositToAccountResponse = serde_json::Value;
+pub type QueryInternalDepositRecordsResponse = serde_json::Value;
+pub type QuerySubMemberDepositAddressResponse = serde_json::Value;
+pub type QuerySubMemberDepositRecordsResponse = serde_json::Value;
+pub type AccountCoinBalanceQueryResponse = serde_json::Value;
+pub type AssetInfoQueryResponse = serde_json::Value;
+pub type SubMemberListQueryResponse = serde_json::Value;
+pub type TransferCoinListQueryResponse = serde_json::Value;
+pub type UniversalTransferListQueryResponse = serde_json::Value;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -528,20 +403,7 @@ pub struct TransferSubMemberSaveParams {
     pub sub_member_ids: String,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct TransferSubMemberSaveResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type TransferSubMemberSaveResponse = serde_json::Value;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -555,66 +417,17 @@ pub struct UniversalTransferParams {
     pub to_account_type: AccountType,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct UniversalTransferResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QueryWithdrawAddressesResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetVasplistResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type UniversalTransferResponse = serde_json::Value;
+pub type QueryWithdrawAddressesResponse = serde_json::Value;
+pub type GetVasplistResponse = serde_json::Value;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct GetAssetOverviewResponse {
     #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
     pub total_equity: Option<String>,
     #[serde(default)]
     pub list: Option<Vec<AssetOverviewAccountItem>>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -656,65 +469,10 @@ pub struct AssetOverviewCoinDetail {
     pub ext_map: Option<serde_json::Value>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetDeliveryRecordResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetPortfolioMarginResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetSettlementRecordResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetTotalMembersAssetsResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type GetDeliveryRecordResponse = serde_json::Value;
+pub type GetPortfolioMarginResponse = serde_json::Value;
+pub type GetSettlementRecordResponse = serde_json::Value;
+pub type GetTotalMembersAssetsResponse = serde_json::Value;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]

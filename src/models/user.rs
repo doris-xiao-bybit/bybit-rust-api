@@ -404,20 +404,7 @@ pub struct ApiKeyPermissions {
     pub affiliate: Option<Vec<String>>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QueryReferralCodeResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<QueryReferralCodeResult>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type QueryReferralCodeResponse = QueryReferralCodeResult;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]

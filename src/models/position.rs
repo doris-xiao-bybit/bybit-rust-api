@@ -632,17 +632,4 @@ pub type SetLeverageResponse = serde_json::Value;
 
 pub type SwitchPositionModeResponse = serde_json::Value;
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetPositionSymbolInfoResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type GetPositionSymbolInfoResponse = serde_json::Value;

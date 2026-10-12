@@ -83,7 +83,11 @@
 - ins_loan_repay_loan
 - query_referral_code
 
-### New Types (120)
+### New Types (124)
+- CreateSpreadOrderParams
+- AmendSpreadOrderParams
+- CancelSpreadOrderParams
+- CancelAllSpreadOrdersParams
 - GetOptionBaseCoinsResponse
 - OptionBaseCoinsResult
 - OptionBaseCoin

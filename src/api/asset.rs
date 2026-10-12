@@ -199,6 +199,7 @@ impl BybitClient {
             .await
     }
 
+    #[allow(clippy::too_many_arguments)]
     pub async fn query_internal_deposit_records(
         &self,
         tx_id: Option<&str>,
@@ -256,6 +257,7 @@ impl BybitClient {
             .await
     }
 
+    #[allow(clippy::too_many_arguments)]
     pub async fn query_sub_member_deposit_records(
         &self,
         id: Option<&str>,
@@ -299,6 +301,7 @@ impl BybitClient {
             .await
     }
 
+    #[allow(clippy::too_many_arguments)]
     pub async fn account_coin_balance_query(
         &self,
         account_type: AccountType,
@@ -390,6 +393,7 @@ impl BybitClient {
             .await
     }
 
+    #[allow(clippy::too_many_arguments)]
     pub async fn universal_transfer_list_query(
         &self,
         transfer_id: Option<&str>,
@@ -505,6 +509,7 @@ impl BybitClient {
         self.get("/v5/asset/asset-overview", &params).await
     }
 
+    #[allow(clippy::too_many_arguments)]
     pub async fn get_delivery_record(
         &self,
         category: Category,

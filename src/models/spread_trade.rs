@@ -1,20 +1,54 @@
+use crate::models::{OrderType, Side, TimeInForce};
 use serde::{Deserialize, Serialize};
-use crate::models::Side;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct GetSpreadInstrumentsInfoResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-    #[serde(default)]
-    pub result: Option<SpreadInstrumentsInfoResult>,
+pub struct CreateSpreadOrderParams {
+    pub symbol: String,
+    pub side: Side,
+    pub order_type: OrderType,
+    pub qty: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub price: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub order_link_id: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub time_in_force: Option<TimeInForce>,
 }
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AmendSpreadOrderParams {
+    pub symbol: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub order_id: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub order_link_id: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub qty: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub price: Option<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct CancelSpreadOrderParams {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub order_id: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub order_link_id: Option<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct CancelAllSpreadOrdersParams {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub symbol: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub cancel_all: Option<bool>,
+}
+
+pub type GetSpreadInstrumentsInfoResponse = SpreadInstrumentsInfoResult;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -69,20 +103,7 @@ pub struct SpreadLeg {
     pub contract_type: Option<String>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetSpreadOrderbookResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-    #[serde(default)]
-    pub result: Option<SpreadOrderbookResult>,
-}
+pub type GetSpreadOrderbookResponse = SpreadOrderbookResult;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -103,25 +124,9 @@ pub struct SpreadOrderbookResult {
     pub cts: Option<i64>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetSpreadOrderbookOrderbookLevel {
-}
+pub type GetSpreadOrderbookOrderbookLevel = [String; 2];
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetSpreadRecentTradesResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-    #[serde(default)]
-    pub result: Option<SpreadRecentTradesResult>,
-}
+pub type GetSpreadRecentTradesResponse = SpreadRecentTradesResult;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -149,20 +154,7 @@ pub struct SpreadTradeRecord {
     pub seq: Option<String>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetSpreadTickersResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-    #[serde(default)]
-    pub result: Option<SpreadTickersResult>,
-}
+pub type GetSpreadTickersResponse = SpreadTickersResult;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -196,17 +188,4 @@ pub struct SpreadTicker {
     pub volume24h: Option<String>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GetSpreadMaxQtyResponse {
-    #[serde(default)]
-    pub ret_code: Option<i64>,
-    #[serde(default)]
-    pub ret_msg: Option<String>,
-    #[serde(default)]
-    pub result: Option<serde_json::Value>,
-    #[serde(default)]
-    pub ret_ext_info: Option<serde_json::Value>,
-    #[serde(default)]
-    pub time: Option<i64>,
-}
+pub type GetSpreadMaxQtyResponse = serde_json::Value;

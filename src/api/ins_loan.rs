@@ -3,11 +3,17 @@ use crate::error::Result;
 use crate::models::ins_loan::*;
 
 impl BybitClient {
-    pub async fn ins_loan_association_uid(&self, params: InsLoanAssociationUidParams) -> Result<InsLoanAssociationUidResponse> {
+    pub async fn ins_loan_association_uid(
+        &self,
+        params: InsLoanAssociationUidParams,
+    ) -> Result<InsLoanAssociationUidResponse> {
         self.post("/v5/ins-loan/association-uid", &params).await
     }
 
-    pub async fn ins_loan_coin_delta_amount(&self, coin: Option<&str>) -> Result<InsLoanCoinDeltaAmountResponse> {
+    pub async fn ins_loan_coin_delta_amount(
+        &self,
+        coin: Option<&str>,
+    ) -> Result<InsLoanCoinDeltaAmountResponse> {
         let mut params = vec![];
         if let Some(value) = coin {
             params.push(("coin", value));
@@ -20,15 +26,22 @@ impl BybitClient {
         self.get("/v5/ins-loan/delay-liq-status", &params).await
     }
 
-    pub async fn ins_loan_ensure_tokens_convert(&self, product_id: Option<&str>) -> Result<InsLoanEnsureTokensConvertResponse> {
+    pub async fn ins_loan_ensure_tokens_convert(
+        &self,
+        product_id: Option<&str>,
+    ) -> Result<InsLoanEnsureTokensConvertResponse> {
         let mut params = vec![];
         if let Some(value) = product_id {
             params.push(("productId", value));
         }
-        self.get("/v5/ins-loan/ensure-tokens-convert", &params).await
+        self.get("/v5/ins-loan/ensure-tokens-convert", &params)
+            .await
     }
 
-    pub async fn ins_loan_ensure_tokens(&self, product_id: Option<&str>) -> Result<InsLoanEnsureTokensResponse> {
+    pub async fn ins_loan_ensure_tokens(
+        &self,
+        product_id: Option<&str>,
+    ) -> Result<InsLoanEnsureTokensResponse> {
         let mut params = vec![];
         if let Some(value) = product_id {
             params.push(("productId", value));
@@ -36,7 +49,13 @@ impl BybitClient {
         self.get("/v5/ins-loan/ensure-tokens", &params).await
     }
 
-    pub async fn ins_loan_get_loan_order(&self, order_id: Option<&str>, start_time: Option<i64>, end_time: Option<i64>, limit: Option<i64>) -> Result<InsLoanGetLoanOrderResponse> {
+    pub async fn ins_loan_get_loan_order(
+        &self,
+        order_id: Option<&str>,
+        start_time: Option<i64>,
+        end_time: Option<i64>,
+        limit: Option<i64>,
+    ) -> Result<InsLoanGetLoanOrderResponse> {
         let mut params = vec![];
         if let Some(value) = order_id {
             params.push(("orderId", value));
@@ -64,7 +83,10 @@ impl BybitClient {
         self.get("/v5/ins-loan/ltv-convert", &params).await
     }
 
-    pub async fn ins_loan_product_infos(&self, product_id: Option<&str>) -> Result<InsLoanProductInfosResponse> {
+    pub async fn ins_loan_product_infos(
+        &self,
+        product_id: Option<&str>,
+    ) -> Result<InsLoanProductInfosResponse> {
         let mut params = vec![];
         if let Some(value) = product_id {
             params.push(("productId", value));
@@ -72,7 +94,12 @@ impl BybitClient {
         self.get("/v5/ins-loan/product-infos", &params).await
     }
 
-    pub async fn ins_loan_repaid_history(&self, start_time: Option<i64>, end_time: Option<i64>, limit: Option<i64>) -> Result<InsLoanRepaidHistoryResponse> {
+    pub async fn ins_loan_repaid_history(
+        &self,
+        start_time: Option<i64>,
+        end_time: Option<i64>,
+        limit: Option<i64>,
+    ) -> Result<InsLoanRepaidHistoryResponse> {
         let mut params = vec![];
         let start_time_string;
         if let Some(value) = start_time {
@@ -92,7 +119,10 @@ impl BybitClient {
         self.get("/v5/ins-loan/repaid-history", &params).await
     }
 
-    pub async fn ins_loan_repay_loan(&self, params: InsLoanRepayLoanParams) -> Result<InsLoanRepayLoanResponse> {
+    pub async fn ins_loan_repay_loan(
+        &self,
+        params: InsLoanRepayLoanParams,
+    ) -> Result<InsLoanRepayLoanResponse> {
         self.post("/v5/ins-loan/repay-loan", &params).await
     }
 }
