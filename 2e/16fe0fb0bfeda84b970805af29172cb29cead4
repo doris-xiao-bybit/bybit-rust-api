@@ -1,0 +1,63 @@
+src/models/account.rs
+  s_dd1145ceee9ee2::t_daeac78d755368 1019,1021,1023
+src/models/spot_margin.rs
+  s_dd1145ceee9ee2::t_ad2847868c94cd 128-134,151-153,163,178-179,189
+src/client.rs
+  s_dd1145ceee9ee2::t_74cd8683e2364c 166-169
+  s_dd1145ceee9ee2::t_d654c69b4d0ab7 165,191,193-196
+  s_dd1145ceee9ee2::t_cffcc176586bbd 136-139,218-276
+  s_dd1145ceee9ee2::t_ad555aa7f1bed2 132-134,141-164,170-190,192,197,277-279
+  s_dd1145ceee9ee2::t_c7bb2c81e6ba2a 135,140,198-217
+src/models/user.rs
+  s_dd1145ceee9ee2::t_daeac78d755368 407
+src/api/pre_upgrade.rs
+  s_dd1145ceee9ee2::t_74cd8683e2364c 4,8-17,44-45,48-55,72-73,76-82,96-97,100-108,129-130,134-146,186-199
+  s_dd1145ceee9ee2::t_5a48075d7f4d69 7,133,185
+src/models/position.rs
+  s_dd1145ceee9ee2::t_daeac78d755368 635
+src/models/mod.rs
+  s_dd1145ceee9ee2::t_43eb6a5b2dac9b 10,13,16,27,30,33
+src/models/ins_loan.rs
+  s_dd1145ceee9ee2::t_19d6c765c13933 10-12,27-32,41
+src/models/pre_upgrade.rs
+  s_dd1145ceee9ee2::t_19d6c765c13933 1-6
+src/api/mod.rs
+  s_dd1145ceee9ee2::t_43eb6a5b2dac9b 9,12,15
+src/api/spread_trade.rs
+  s_dd1145ceee9ee2::t_5a48075d7f4d69 132,179
+  s_dd1145ceee9ee2::t_74cd8683e2364c 7-13,32-36,46-50,98-106,133-143,180-189,221-226,228-232
+  s_dd1145ceee9ee2::t_6d1c1ca977b7db 66-70,74-78,82-86,90-94
+  s_dd1145ceee9ee2::t_43eb6a5b2dac9b 3
+RELEASE_NOTES.md
+  s_dd1145ceee9ee2::t_08c2b2cf8cee71 86-90
+src/api/asset.rs
+  s_dd1145ceee9ee2::t_5a48075d7f4d69 202,260,304,396,512
+src/models/asset.rs
+  s_dd1145ceee9ee2::t_c501098ff9b8a2 390-398,406,420-422,472-475
+src/api/ins_loan.rs
+  s_dd1145ceee9ee2::t_74cd8683e2364c 6-9,13-16,29-32,37-38,41-44,52-58,86-89,97-102,122-125
+src/models/spread_trade.rs
+  s_dd1145ceee9ee2::t_6d1c1ca977b7db 1,6-39,42-49
+  s_dd1145ceee9ee2::t_051291d69d7324 51-52,106,127,129,157,191
+  s_dd1145ceee9ee2::t_2e33de05f8faa0 50
+src/models/market.rs
+  s_dd1145ceee9ee2::t_daeac78d755368 1105
+src/models/earn.rs
+  s_dd1145ceee9ee2::t_daeac78d755368 3154,3166
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "2e16fe0fb0bfeda84b970805af29172cb29cead4",
+  "prompts": {},
+  "sessions": {
+    "s_dd1145ceee9ee2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1303d-186b-7dc1-abaf-39bb61db15f0",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "doris-xiao-bybit <doris.xiao@bybit.com>"
+    }
+  }
+}
