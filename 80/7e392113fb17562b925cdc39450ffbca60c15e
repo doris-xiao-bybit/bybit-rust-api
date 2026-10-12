@@ -1,0 +1,63 @@
+Cargo.toml
+  s_14731aa45014cc::t_5eede51f569b56 3
+RELEASE_NOTES.md
+  s_14731aa45014cc::t_21d7ac23f994d3 1-207
+examples/verify_public_apis.rs
+  s_14731aa45014cc::t_16063fd9559e13 30-34
+src/api/account.rs
+  s_14731aa45014cc::t_38495249cd6cd3 248-293
+src/api/asset.rs
+  s_14731aa45014cc::t_c0003c8ae9892d 6,192-763
+src/api/earn.rs
+  s_14731aa45014cc::t_168c91dd7aa014 22-25,685-688,1256-1277
+src/api/ins_loan.rs
+  s_14731aa45014cc::t_21282101139871 1-98
+src/api/market.rs
+  s_14731aa45014cc::t_601c472af818de 5,456-471
+src/api/position.rs
+  s_14731aa45014cc::t_ecf63900f06a21 291-305
+src/api/pre_upgrade.rs
+  s_14731aa45014cc::t_0d6f52a517727d 1-178
+src/api/spot_margin.rs
+  s_14731aa45014cc::t_da8e5b978d74db 74-283
+src/api/spread_trade.rs
+  s_14731aa45014cc::t_5a546678ef8ff2 1-171
+src/api/user.rs
+  s_14731aa45014cc::t_02e95dcf07279e 162,266-272
+src/models/account.rs
+  s_14731aa45014cc::t_5062f37ea83d5f 987-1062
+src/models/asset.rs
+  s_14731aa45014cc::t_2dde27bd261ecc 4,383-1109
+src/models/earn.rs
+  s_14731aa45014cc::t_90271112a9d810 3153-3190
+src/models/ins_loan.rs
+  s_14731aa45014cc::t_b8d41f0b58287d 1-178
+src/models/market.rs
+  s_14731aa45014cc::t_c9329cbe313216 1104-1144
+src/models/position.rs
+  s_14731aa45014cc::t_0813f08f975086 634-648
+src/models/pre_upgrade.rs
+  s_14731aa45014cc::t_f7b059a918ea93 1-89
+src/models/spot_margin.rs
+  s_14731aa45014cc::t_3e6e6296ecaaf6 106-380
+src/models/spread_trade.rs
+  s_14731aa45014cc::t_2584350f346806 1-212
+src/models/user.rs
+  s_14731aa45014cc::t_7d7cf35cb6c4e5 406-435
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "807e392113fb17562b925cdc39450ffbca60c15e",
+  "prompts": {},
+  "sessions": {
+    "s_14731aa45014cc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11a25-078f-7d13-b8c5-a1f8f61777b2",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "doris-xiao-bybit <doris.xiao@bybit.com>"
+    }
+  }
+}
