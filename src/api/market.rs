@@ -2,7 +2,6 @@
 
 use crate::client::BybitClient;
 use crate::error::Result;
-use crate::models::market::*;
 use crate::models::*;
 
 impl BybitClient {
