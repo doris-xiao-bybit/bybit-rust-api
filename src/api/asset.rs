@@ -490,15 +490,13 @@ impl BybitClient {
 
     pub async fn get_asset_overview(
         &self,
-        account_type: Option<AccountType>,
+        account_type: Option<&str>,
         member_id: Option<&str>,
         valuation_currency: Option<&str>,
     ) -> Result<GetAssetOverviewResponse> {
         let mut params = vec![];
-        let account_type_string;
         if let Some(value) = account_type {
-            account_type_string = value.to_string();
-            params.push(("accountType", account_type_string.as_str()));
+            params.push(("accountType", value));
         }
         if let Some(value) = member_id {
             params.push(("memberId", value));

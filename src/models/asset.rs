@@ -1,7 +1,7 @@
 //! Asset models.
 
 use crate::error::{BybitError, Result};
-use crate::models::{AccountType, Category};
+use crate::models::AccountType;
 use serde::{Deserialize, Serialize};
 use tracing::warn;
 
@@ -434,7 +434,7 @@ pub struct GetAssetOverviewResponse {
 #[serde(rename_all = "camelCase")]
 pub struct AssetOverviewAccountItem {
     #[serde(default)]
-    pub account_type: Option<AccountType>,
+    pub account_type: Option<String>,
     #[serde(default)]
     pub snapshot_time: Option<String>,
     #[serde(default)]
@@ -451,7 +451,7 @@ pub struct AssetOverviewAccountItem {
 #[serde(rename_all = "camelCase")]
 pub struct AssetOverviewCategory {
     #[serde(default)]
-    pub category: Option<Category>,
+    pub category: Option<String>,
     #[serde(default)]
     pub equity: Option<String>,
     #[serde(default)]

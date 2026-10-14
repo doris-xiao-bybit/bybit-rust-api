@@ -135,9 +135,40 @@ mod response_shape_tests {
     use crate::models::{
         AmendSpreadOrderParams, CancelAllSpreadOrdersParams, CancelSpreadOrderParams,
         ConvertAccountType, ConvertCoinSide, ConvertHistoryQueryResponse, CreateSpreadOrderParams,
-        GetOptionBaseCoinsResponse, GetPreUpgradeOrderHistoryResponse, GetSpreadOrderbookResponse,
-        InsLoanProductInfosResponse, OrderType, QueryReferralCodeResponse, Side, TimeInForce,
+        GetAssetOverviewResponse, GetOptionBaseCoinsResponse, GetPreUpgradeOrderHistoryResponse,
+        GetSpreadOrderbookResponse, InsLoanProductInfosResponse, OrderType,
+        QueryReferralCodeResponse, Side, TimeInForce,
     };
+
+    #[test]
+    fn asset_overview_accepts_open_ended_labels() {
+        let response: ApiResponse<GetAssetOverviewResponse> =
+            serde_json::from_value(serde_json::json!({
+                "retCode": 0,
+                "retMsg": "Success",
+                "result": {
+                    "totalEquity": "1",
+                    "list": [{
+                        "accountType": "UnifiedTradingAccount",
+                        "categories": [{"category": "Easy Earn", "equity": "1"}]
+                    }]
+                },
+                "time": 1
+            }))
+            .expect("asset overview labels should deserialize");
+
+        let list = response.result.list.unwrap();
+        assert_eq!(
+            list[0].account_type.as_deref(),
+            Some("UnifiedTradingAccount")
+        );
+        assert_eq!(
+            list[0].categories.as_ref().unwrap()[0]
+                .category
+                .as_deref(),
+            Some("Easy Earn")
+        );
+    }
 
     #[test]
     fn convert_types_match_wire_contract() {
