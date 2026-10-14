@@ -1254,15 +1254,34 @@ impl BybitClient {
     }
 }
 
+fn auto_savings_params<'a>(coins: Option<&'a [&'a str]>) -> Vec<(&'static str, &'a str)> {
+    coins
+        .unwrap_or_default()
+        .iter()
+        .map(|coin| ("coins", *coin))
+        .collect()
+}
+
+#[cfg(test)]
+mod auto_savings_tests {
+    use super::auto_savings_params;
+
+    #[test]
+    fn auto_savings_uses_repeated_coin_parameters() {
+        assert_eq!(
+            auto_savings_params(Some(&["BTC", "ETH"])),
+            vec![("coins", "BTC"), ("coins", "ETH")]
+        );
+        assert!(auto_savings_params(None).is_empty());
+    }
+}
+
 impl BybitClient {
     pub async fn list_earn_auto_savings(
         &self,
-        coins: Option<&str>,
+        coins: Option<&[&str]>,
     ) -> Result<ListEarnAutoSavingsResponse> {
-        let mut params = vec![];
-        if let Some(value) = coins {
-            params.push(("coins", value));
-        }
+        let params = auto_savings_params(coins);
         self.get("/v5/earn/flexible-saving/auto-savings", &params)
             .await
     }
