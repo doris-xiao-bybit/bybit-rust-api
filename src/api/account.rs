@@ -268,14 +268,11 @@ impl BybitClient {
 
     pub async fn get_trade_info_for_analysis(
         &self,
-        symbol: Option<&str>,
+        symbol: &str,
         start_time: Option<i64>,
         end_time: Option<i64>,
     ) -> Result<GetTradeInfoForAnalysisResponse> {
-        let mut params = vec![];
-        if let Some(value) = symbol {
-            params.push(("symbol", value));
-        }
+        let mut params = vec![("symbol", symbol)];
         let start_time_string;
         if let Some(value) = start_time {
             start_time_string = value.to_string();

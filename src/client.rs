@@ -131,7 +131,7 @@ mod query_tests {
 
 #[cfg(test)]
 mod response_shape_tests {
-    use super::ApiResponse;
+    use super::{ApiResponse, BybitClient};
     use crate::models::{
         AmendSpreadOrderParams, CancelAllSpreadOrdersParams, CancelSpreadOrderParams,
         ConvertAccountType, ConvertCoinSide, ConvertHistoryQueryResponse, CreateSpreadOrderParams,
@@ -139,6 +139,12 @@ mod response_shape_tests {
         GetSpreadOrderbookResponse, InsLoanProductInfosResponse, OrderType,
         QueryReferralCodeResponse, Side, TimeInForce,
     };
+
+    #[test]
+    fn trade_analysis_requires_symbol() {
+        let client = BybitClient::testnet("", "").unwrap();
+        let _request = client.get_trade_info_for_analysis("BTCUSDT", None, None);
+    }
 
     #[test]
     fn asset_overview_accepts_open_ended_labels() {
