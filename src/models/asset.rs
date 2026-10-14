@@ -474,6 +474,51 @@ pub type GetPortfolioMarginResponse = serde_json::Value;
 pub type GetSettlementRecordResponse = serde_json::Value;
 pub type GetTotalMembersAssetsResponse = serde_json::Value;
 
+/// Wallet type used by the Convert APIs.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+pub enum ConvertAccountType {
+    #[serde(rename = "eb_convert_funding")]
+    Funding,
+    #[serde(rename = "eb_convert_uta")]
+    Uta,
+    #[serde(rename = "eb_convert_spot")]
+    Spot,
+    #[serde(rename = "eb_convert_contract")]
+    Contract,
+    #[serde(rename = "eb_convert_inverse")]
+    Inverse,
+}
+
+impl std::fmt::Display for ConvertAccountType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(match self {
+            Self::Funding => "eb_convert_funding",
+            Self::Uta => "eb_convert_uta",
+            Self::Spot => "eb_convert_spot",
+            Self::Contract => "eb_convert_contract",
+            Self::Inverse => "eb_convert_inverse",
+        })
+    }
+}
+
+/// Which side of the Convert coin list to return.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum ConvertCoinSide {
+    /// Coins available to sell (`side=0`).
+    FromCoin,
+    /// Coins available to buy (`side=1`).
+    ToCoin,
+}
+
+impl std::fmt::Display for ConvertCoinSide {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(match self {
+            Self::FromCoin => "0",
+            Self::ToCoin => "1",
+        })
+    }
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct CoinListQueryResponse {
@@ -536,7 +581,7 @@ pub struct ConvertHistoryQueryResponse {
 #[serde(rename_all = "camelCase")]
 pub struct ConvertResult {
     #[serde(default)]
-    pub account_type: Option<AccountType>,
+    pub account_type: Option<String>,
     #[serde(default)]
     pub exchange_tx_id: Option<String>,
     #[serde(default)]
@@ -603,7 +648,7 @@ pub struct ExchangeBody {
 pub struct QuoteApplyParams {
     #[serde(default)]
     pub request_id: Option<String>,
-    pub account_type: AccountType,
+    pub account_type: ConvertAccountType,
     pub from_coin: String,
     #[serde(default)]
     pub from_coin_type: Option<String>,
@@ -698,7 +743,7 @@ pub struct QuerySmallAssetConvertOrderResponse {
 #[serde(rename_all = "camelCase")]
 pub struct MainConvertRecord {
     #[serde(default)]
-    pub account_type: Option<AccountType>,
+    pub account_type: Option<String>,
     #[serde(default)]
     pub exchange_tx_id: Option<String>,
     #[serde(default)]
@@ -803,7 +848,7 @@ pub struct SmallAssetCoin {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SmallAssetQuoteParams {
-    pub account_type: AccountType,
+    pub account_type: ConvertAccountType,
     pub to_coin: String,
     pub from_coin_list: Vec<String>,
 }

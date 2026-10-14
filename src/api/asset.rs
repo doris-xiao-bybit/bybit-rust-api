@@ -3,7 +3,7 @@
 use crate::client::BybitClient;
 use crate::error::Result;
 use crate::models::asset::*;
-use crate::models::{AccountType, Category, Side};
+use crate::models::{AccountType, Category, ConvertAccountType, ConvertCoinSide};
 use tracing::info;
 use uuid::Uuid;
 
@@ -608,8 +608,8 @@ impl BybitClient {
 
     pub async fn coin_list_query(
         &self,
-        account_type: AccountType,
-        side: Option<Side>,
+        account_type: ConvertAccountType,
+        side: Option<ConvertCoinSide>,
         coin: Option<&str>,
     ) -> Result<CoinListQueryResponse> {
         let account_type_string = account_type.to_string();
@@ -636,7 +636,7 @@ impl BybitClient {
 
     pub async fn convert_history_query(
         &self,
-        account_type: Option<AccountType>,
+        account_type: Option<ConvertAccountType>,
         index: Option<i64>,
         limit: Option<i64>,
     ) -> Result<ConvertHistoryQueryResponse> {
@@ -663,7 +663,7 @@ impl BybitClient {
     pub async fn query_result(
         &self,
         quote_tx_id: &str,
-        account_type: AccountType,
+        account_type: ConvertAccountType,
     ) -> Result<QueryResultResponse> {
         let account_type_string = account_type.to_string();
         let params = vec![
@@ -713,7 +713,7 @@ impl BybitClient {
 
     pub async fn query_small_asset_convert_order(
         &self,
-        account_type: Option<AccountType>,
+        account_type: Option<ConvertAccountType>,
         quote_id: Option<&str>,
         cursor: Option<&str>,
         size: Option<&str>,
@@ -747,7 +747,7 @@ impl BybitClient {
 
     pub async fn query_small_asset_list(
         &self,
-        account_type: AccountType,
+        account_type: ConvertAccountType,
         from_coin: Option<&str>,
     ) -> Result<QuerySmallAssetListResponse> {
         let account_type_string = account_type.to_string();

@@ -134,10 +134,31 @@ mod response_shape_tests {
     use super::ApiResponse;
     use crate::models::{
         AmendSpreadOrderParams, CancelAllSpreadOrdersParams, CancelSpreadOrderParams,
-        CreateSpreadOrderParams, GetOptionBaseCoinsResponse, GetPreUpgradeOrderHistoryResponse,
-        GetSpreadOrderbookResponse, InsLoanProductInfosResponse, OrderType,
-        QueryReferralCodeResponse, Side, TimeInForce,
+        ConvertAccountType, ConvertCoinSide, ConvertHistoryQueryResponse, CreateSpreadOrderParams,
+        GetOptionBaseCoinsResponse, GetPreUpgradeOrderHistoryResponse, GetSpreadOrderbookResponse,
+        InsLoanProductInfosResponse, OrderType, QueryReferralCodeResponse, Side, TimeInForce,
     };
+
+    #[test]
+    fn convert_types_match_wire_contract() {
+        assert_eq!(
+            serde_json::to_value(ConvertAccountType::Uta).unwrap(),
+            serde_json::json!("eb_convert_uta")
+        );
+        assert_eq!(ConvertCoinSide::FromCoin.to_string(), "0");
+        assert_eq!(ConvertCoinSide::ToCoin.to_string(), "1");
+
+        let history: ConvertHistoryQueryResponse =
+            serde_json::from_value(serde_json::json!({
+                "list": [{"accountType": "funding"}]
+            }))
+            .expect("convert history account labels should deserialize");
+
+        assert_eq!(
+            history.list.unwrap()[0].account_type.as_deref(),
+            Some("funding")
+        );
+    }
 
     #[test]
     fn option_base_coins_deserializes_the_unwrapped_result() {
