@@ -1,5 +1,13 @@
 ## 2026-10-12
 
+### Fixes
+- Use dedicated `ConvertAccountType` and `ConvertCoinSide` wire types for asset
+  conversion endpoints, and preserve open-ended account labels in conversion
+  history responses.
+- Accept the account and category labels returned by the asset overview API.
+- Require the documented `symbol` parameter for trade analysis requests.
+- Encode Earn auto-savings coin filters as repeated `coins` query parameters.
+
 ### New Functions (81)
 - get_option_base_coins
 - get_spread_instruments_info

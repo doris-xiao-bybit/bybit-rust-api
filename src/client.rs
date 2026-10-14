@@ -169,9 +169,7 @@ mod response_shape_tests {
             Some("UnifiedTradingAccount")
         );
         assert_eq!(
-            list[0].categories.as_ref().unwrap()[0]
-                .category
-                .as_deref(),
+            list[0].categories.as_ref().unwrap()[0].category.as_deref(),
             Some("Easy Earn")
         );
     }
@@ -185,11 +183,10 @@ mod response_shape_tests {
         assert_eq!(ConvertCoinSide::FromCoin.to_string(), "0");
         assert_eq!(ConvertCoinSide::ToCoin.to_string(), "1");
 
-        let history: ConvertHistoryQueryResponse =
-            serde_json::from_value(serde_json::json!({
-                "list": [{"accountType": "funding"}]
-            }))
-            .expect("convert history account labels should deserialize");
+        let history: ConvertHistoryQueryResponse = serde_json::from_value(serde_json::json!({
+            "list": [{"accountType": "funding"}]
+        }))
+        .expect("convert history account labels should deserialize");
 
         assert_eq!(
             history.list.unwrap()[0].account_type.as_deref(),
