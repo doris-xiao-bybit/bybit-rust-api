@@ -1,0 +1,118 @@
+src/api/fmart_bot.rs
+  s_6af3615319c4cd::t_6539ca64c44597 16-38
+RELEASE_NOTES.md
+  s_6af3615319c4cd::t_4be164c2eb0637 1-341
+src/api/crypto_loan.rs
+  s_6af3615319c4cd::t_3c94ef723de4cd 386-413
+src/api/tax.rs
+  s_6af3615319c4cd::t_6cde1d1f967166 1-22
+src/api/spot_x.rs
+  s_6af3615319c4cd::t_01994eddd1ce0b 1-129
+src/api/stocks.rs
+  s_6af3615319c4cd::t_cc9e545a0284e4 1-111
+src/models/event.rs
+  s_0a3a743de04a4d::t_fa993a621922cf 1,3,5,7,9
+  s_6af3615319c4cd::t_3ea2e3a76865f7 2,4,6,8
+  s_0a3a743de04a4d::t_7c05a5aebfae7d 10-12
+  s_0a3a743de04a4d::t_cfef772c11b84d 13-41
+src/models/alpha.rs
+  s_6af3615319c4cd::t_1c42c086010b1b 1-22,24-33,35-43,45-51,53-60,62-66,68-78,80-97,99-110,112,114,116-127,129-135,137-149,151,153-172,174,176,178-195,197-208,210-221,223-235,237,239-251,253-259,261,263-270,272,274-280,282,284-290,292-299,301,303-310,312-319,321-369,371-390,392-399,401-435,437-448,450-465
+  s_0a3a743de04a4d::t_fa993a621922cf 23,34,44,52,61,67,79,98,113,115,128,136,152,175,177,196,209,222,238,252,262,273,281,283,291,300,302,311,320,370,391,400,436,449,466
+  s_0a3a743de04a4d::t_aec8b661c8a6eb 111,150,173,236,260,271
+  s_0a3a743de04a4d::t_f96ebff138d00c 467-848
+src/api/referral.rs
+  s_6af3615319c4cd::t_48d11fba4a4601 1-34
+src/api/strategy.rs
+  s_6af3615319c4cd::t_12114ef9a4c38e 1-111
+src/api/grid.rs
+  s_6af3615319c4cd::t_306e8fbb91572c 1-30
+src/models/fmart_bot.rs
+  s_6af3615319c4cd::t_08459582f686cb 55-63,65-192,194,196,198,200-253,255-263
+  s_0a3a743de04a4d::t_aec8b661c8a6eb 64,193,195,197,199,254
+  s_0a3a743de04a4d::t_e583b933437308 264-275
+src/models/fgrid_bot.rs
+  s_0a3a743de04a4d::t_aec8b661c8a6eb 174,176,178,180,182,184,186,188,254,256,258,267,269,271,288,322,324,326
+  s_6af3615319c4cd::t_4d8123c640b5a5 1-173,175,177,179,181,183,185,187,189-253,255,257,259-266,268,270,272-287,289-321,323,325,327-380
+  s_0a3a743de04a4d::t_0b10b05434a815 381-416
+src/models/spot_x.rs
+  s_0a3a743de04a4d::t_fa993a621922cf 3,72,107,154,184,216,248
+  s_6af3615319c4cd::t_5fb61e9ded0b00 1-2,4-71,73-106,108-153,155-183,185-215,217-247,249-285
+  s_0a3a743de04a4d::t_77daae262705f6 286-376
+src/models/grid.rs
+  s_0a3a743de04a4d::t_aec8b661c8a6eb 11,62,64,66,68,185,187,189,261
+  s_6af3615319c4cd::t_90234d92b44b5c 1-10,12-61,63,65,67,69-184,186,188,190-260
+  s_0a3a743de04a4d::t_d65d1d8d7a2cc9 262-279
+src/models/mod.rs
+  s_6af3615319c4cd::t_dcc63da560b137 36-46
+src/api/combo_bot.rs
+  s_6af3615319c4cd::t_839ccaff0c1cce 1-33
+src/models/dca.rs
+  s_6af3615319c4cd::t_ea64ece70dc5f8 1-9,11-63
+  s_0a3a743de04a4d::t_aec8b661c8a6eb 10
+  s_0a3a743de04a4d::t_dddd69c6c34d29 64-65
+src/models/tax.rs
+  s_0a3a743de04a4d::t_fa993a621922cf 23,25
+  s_6af3615319c4cd::t_2adcff8414c6b0 1-22,24
+  s_0a3a743de04a4d::t_f6983e8310539f 26-43
+src/api/mod.rs
+  s_6af3615319c4cd::t_20a10dd69ac7b5 3,6,8,10-11,14,19,22,24-26
+src/api/event.rs
+  s_6af3615319c4cd::t_233779ebaa76c4 1-176
+src/models/combo_bot.rs
+  s_0a3a743de04a4d::t_aec8b661c8a6eb 12,54,73,75,77,204,206,208,227,229,231,281
+  s_6af3615319c4cd::t_c5d2064e331268 1-11,13-53,55-72,74,76,78-203,205,207,209-226,228,230,232-280,282-290
+  s_0a3a743de04a4d::t_5a116bd3e72eb5 291-314
+src/api/dca.rs
+  s_6af3615319c4cd::t_2596c783575d14 1-13
+src/api/fgrid_bot.rs
+  s_6af3615319c4cd::t_0c5292908d40b4 1-33
+src/api/alpha.rs
+  s_6af3615319c4cd::t_5bed872711fe19 1-263
+src/models/stocks.rs
+  s_6af3615319c4cd::t_2d5fa3df83309b 1-28,30-36,38,40-86,88,90-107,109,111-142,144,146,148-177,179-202
+  s_0a3a743de04a4d::t_fa993a621922cf 29,37,39,89,108,110,145,147,178
+  s_0a3a743de04a4d::t_aec8b661c8a6eb 87,143
+  s_0a3a743de04a4d::t_38d44e409a5674 203-315
+src/models/strategy.rs
+  s_0a3a743de04a4d::t_fa993a621922cf 1,3,5
+  s_6af3615319c4cd::t_42daaef91783f1 2,4
+  s_0a3a743de04a4d::t_5ec1ff944845e0 6-8
+  s_0a3a743de04a4d::t_53c52eca1d8f67 9-52
+src/models/spot_margin.rs
+  s_6af3615319c4cd::t_58a2898055968f 190,192-198
+  s_0a3a743de04a4d::t_fa993a621922cf 191,199
+  s_0a3a743de04a4d::t_0519da2dedc026 200-225
+src/models/referral.rs
+  s_6af3615319c4cd::t_71c35dc06b6dc4 1-6,8-64,66,68-100,102-106,108-173,175,177-206
+  s_0a3a743de04a4d::t_fa993a621922cf 7,67,107,176
+  s_0a3a743de04a4d::t_aec8b661c8a6eb 65,101,174
+  s_0a3a743de04a4d::t_33dd98f848d5c7 207-249
+Cargo.toml
+  s_6af3615319c4cd::t_9e2dd7ac3c9eaf 3
+src/api/spot_margin.rs
+  s_6af3615319c4cd::t_029e7e4691ee38 284-320
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "15c3073e668b8c343e3e89c3241a4580281ad8c9",
+  "prompts": {},
+  "sessions": {
+    "s_0a3a743de04a4d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a181cf-de08-7261-b3f3-4f7f655d05f1",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "doris-xiao-bybit <doris.xiao@bybit.com>"
+    },
+    "s_6af3615319c4cd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a17b58-1fcd-78f2-af28-625b66470487",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "doris-xiao-bybit <doris.xiao@bybit.com>"
+    }
+  }
+}
