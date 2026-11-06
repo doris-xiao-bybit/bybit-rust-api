@@ -1,0 +1,19 @@
+RELEASE_NOTES.md
+  s_0a3a743de04a4d::t_1d4af80ebc552d 3,83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "6e5658d6b653b300a7ca17f7a087a52540a414c7",
+  "prompts": {},
+  "sessions": {
+    "s_0a3a743de04a4d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a181cf-de08-7261-b3f3-4f7f655d05f1",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "doris-xiao-bybit <doris.xiao@bybit.com>"
+    }
+  }
+}
