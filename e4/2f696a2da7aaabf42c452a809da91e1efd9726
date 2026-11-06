@@ -1,0 +1,55 @@
+src/api/event.rs
+  s_0a3a743de04a4d::t_42a6b989364348 6,140
+src/models/common.rs
+  s_0a3a743de04a4d::t_4d47c22df75193 50-90
+src/api/strategy.rs
+  s_0a3a743de04a4d::t_42a6b989364348 14,57
+src/client.rs
+  s_0a3a743de04a4d::t_0336866c36f547 135,138,140-142,212-215,219-220,224-230,235-252
+  s_0a3a743de04a4d::t_9e3abe57035b47 695,699-702,724,729-734
+  s_0a3a743de04a4d::t_896c130f0f7368 136-137,139,253-260,263-278
+  s_0a3a743de04a4d::t_d5b31b1f9c2da0 150,184-185,193,200-201,216-218,221-223,231-234,261-262,703-714,725-728
+  s_0a3a743de04a4d::t_097f97ef96ef88 151-183,186-192,194-199,202-211,279
+src/models/alpha.rs
+  s_0a3a743de04a4d::t_7e39165ef8d477 23,34,44,52,61,67,79,98,111,113,115,128,136,150,152,173,175,177,196,209,222,236,238,252,260,262,271,273,281,283,291,300,302,311,320,370,391,400,436,449,466
+src/models/combo_bot.rs
+  s_0a3a743de04a4d::t_f91b01acdb381a 12,54,73,75,77,204,206,208,227,229,231,281
+src/models/dca.rs
+  s_0a3a743de04a4d::t_ef0067039dc097 10
+src/models/fgrid_bot.rs
+  s_0a3a743de04a4d::t_68cc2d90d23193 174,176,178,180,182,184,186,188,254,256,258,267,269,271,288,322,324,326
+src/models/fmart_bot.rs
+  s_0a3a743de04a4d::t_a467aaeb6dcc88 64,193,195,197,199,254
+src/models/grid.rs
+  s_0a3a743de04a4d::t_ab570c835a6596 11,62,64,66,68,185,187,189,261
+src/models/referral.rs
+  s_0a3a743de04a4d::t_5818f2e4cc05dd 7,65,67,101,107,174,176
+src/models/spot_margin.rs
+  s_0a3a743de04a4d::t_cd1bc909f838b0 191,199
+src/models/spot_x.rs
+  s_0a3a743de04a4d::t_b4c108ab7cb6b4 3,72,107,154,184,216,248
+src/models/stocks.rs
+  s_0a3a743de04a4d::t_900b5d1d85993c 29,37,39,87,89,108,110,143,145,147,178
+src/models/tax.rs
+  s_0a3a743de04a4d::t_1a883c45e0e3f6 23,25
+src/models/event.rs
+  s_0a3a743de04a4d::t_7a9a15b9fb94e4 1,3,5,7,9
+src/models/strategy.rs
+  s_0a3a743de04a4d::t_171f1486ddac7e 1,3,5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "e42f696a2da7aaabf42c452a809da91e1efd9726",
+  "prompts": {},
+  "sessions": {
+    "s_0a3a743de04a4d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a181cf-de08-7261-b3f3-4f7f655d05f1",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "doris-xiao-bybit <doris.xiao@bybit.com>"
+    }
+  }
+}
