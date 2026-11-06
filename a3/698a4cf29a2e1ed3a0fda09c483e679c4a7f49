@@ -1,0 +1,89 @@
+docs/superpowers/specs/2026-11-06-generated-api-fixes-design.md
+  s_0a3a743de04a4d::t_9b614297e65330 1-55
+Cargo.toml
+  s_6af3615319c4cd::t_9e2dd7ac3c9eaf 3
+RELEASE_NOTES.md
+  s_6af3615319c4cd::t_4be164c2eb0637 1-341
+src/api/alpha.rs
+  s_6af3615319c4cd::t_5bed872711fe19 1-263
+src/api/combo_bot.rs
+  s_6af3615319c4cd::t_839ccaff0c1cce 1-33
+src/api/crypto_loan.rs
+  s_6af3615319c4cd::t_3c94ef723de4cd 386-413
+src/api/dca.rs
+  s_6af3615319c4cd::t_2596c783575d14 1-13
+src/api/event.rs
+  s_6af3615319c4cd::t_233779ebaa76c4 1-176
+src/api/fgrid_bot.rs
+  s_6af3615319c4cd::t_0c5292908d40b4 1-33
+src/api/fmart_bot.rs
+  s_6af3615319c4cd::t_6539ca64c44597 16-38
+src/api/grid.rs
+  s_6af3615319c4cd::t_306e8fbb91572c 1-30
+src/api/mod.rs
+  s_6af3615319c4cd::t_20a10dd69ac7b5 3,6,8,10-11,14,19,22,24-26
+src/api/referral.rs
+  s_6af3615319c4cd::t_48d11fba4a4601 1-34
+src/api/spot_margin.rs
+  s_6af3615319c4cd::t_029e7e4691ee38 284-320
+src/api/spot_x.rs
+  s_6af3615319c4cd::t_01994eddd1ce0b 1-129
+src/api/stocks.rs
+  s_6af3615319c4cd::t_cc9e545a0284e4 1-111
+src/api/strategy.rs
+  s_6af3615319c4cd::t_12114ef9a4c38e 1-111
+src/api/tax.rs
+  s_6af3615319c4cd::t_6cde1d1f967166 1-22
+src/models/alpha.rs
+  s_6af3615319c4cd::t_1c42c086010b1b 1-848
+src/models/combo_bot.rs
+  s_6af3615319c4cd::t_c5d2064e331268 1-314
+src/models/dca.rs
+  s_6af3615319c4cd::t_ea64ece70dc5f8 1-65
+src/models/event.rs
+  s_6af3615319c4cd::t_3ea2e3a76865f7 1-41
+src/models/fgrid_bot.rs
+  s_6af3615319c4cd::t_4d8123c640b5a5 1-416
+src/models/fmart_bot.rs
+  s_6af3615319c4cd::t_08459582f686cb 55-275
+src/models/grid.rs
+  s_6af3615319c4cd::t_90234d92b44b5c 1-279
+src/models/mod.rs
+  s_6af3615319c4cd::t_dcc63da560b137 36-46
+src/models/referral.rs
+  s_6af3615319c4cd::t_71c35dc06b6dc4 1-249
+src/models/spot_margin.rs
+  s_6af3615319c4cd::t_58a2898055968f 190-225
+src/models/spot_x.rs
+  s_6af3615319c4cd::t_5fb61e9ded0b00 1-376
+src/models/stocks.rs
+  s_6af3615319c4cd::t_2d5fa3df83309b 1-315
+src/models/strategy.rs
+  s_6af3615319c4cd::t_42daaef91783f1 1-52
+src/models/tax.rs
+  s_6af3615319c4cd::t_2adcff8414c6b0 1-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "a3698a4cf29a2e1ed3a0fda09c483e679c4a7f49",
+  "prompts": {},
+  "sessions": {
+    "s_0a3a743de04a4d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a181cf-de08-7261-b3f3-4f7f655d05f1",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "doris-xiao-bybit <doris.xiao@bybit.com>"
+    },
+    "s_6af3615319c4cd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a17b58-1fcd-78f2-af28-625b66470487",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "doris-xiao-bybit <doris.xiao@bybit.com>"
+    }
+  }
+}
